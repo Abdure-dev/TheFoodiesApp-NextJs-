@@ -1,15 +1,12 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import NavLink from "./nav-link";
 
 import MainHeaderBackground from "./main-header-background";
 import logoImg from "@/assets/logo.png";
 import syles from "./header-style.module.css";
 
 export default function MainHeader() {
-  const path = usePathname();
   return (
     <>
       <MainHeaderBackground />
@@ -21,24 +18,10 @@ export default function MainHeader() {
         <nav className={syles.nav}>
           <ul>
             <li>
-              {" "}
-              <Link
-                href="/meals"
-                className={path.startsWith("/meals") ? syles.active : undefined}
-              >
-                Browse Meals
-              </Link>
+              <NavLink href="/meals">Browse Meals</NavLink>
             </li>
             <li>
-              {" "}
-              <Link
-                href="/community"
-                className={
-                  path.startsWith("/community") ? syles.active : undefined
-                }
-              >
-                Foodies Community
-              </Link>
+              <NavLink href="/community">Browse Meals</NavLink>
             </li>
           </ul>
         </nav>
