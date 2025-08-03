@@ -1,27 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
-import NavLink from "./nav-link";
+import NavLink from "./nav-link.js";
 
 import MainHeaderBackground from "./main-header-background";
 import logoImg from "@/assets/logo.png";
-import syles from "./header-style.module.css";
+import classes from "./header-style.module.css";
 
 export default function MainHeader() {
   return (
     <>
       <MainHeaderBackground />
-      <header className={syles.header}>
-        <Link className={syles.logo} href="/">
+      <header className={classes.header}>
+        <Link className={classes.logo} href="/">
           <Image src={logoImg} alt="A plate with food on it" priority />
           NextLevel Food
         </Link>
-        <nav className={syles.nav}>
+        <nav className={classes.nav}>
           <ul>
             <li>
               <NavLink href="/meals">Browse Meals</NavLink>
             </li>
             <li>
-              <NavLink href="/community">Browse Meals</NavLink>
+              <NavLink href="/community">Browse community</NavLink>
             </li>
           </ul>
         </nav>
